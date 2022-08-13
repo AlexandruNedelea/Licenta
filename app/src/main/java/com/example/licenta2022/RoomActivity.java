@@ -18,6 +18,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -37,17 +38,15 @@ public class RoomActivity extends BaseActivity<ActivityRoomBinding> {
 
     private void setRecyclerView() {
         ArrayList<RoomModelUI> roomModelUIArrayList = new ArrayList<>();
-        roomModelUIArrayList.add(new RoomModelUI(1,"Bambilici"));
-        roomModelUIArrayList.add(new RoomModelUI(2,"Paduchios"));
-        roomModelUIArrayList.add(new RoomModelUI(3,"Sarmale"));
-        roomModelUIArrayList.add(new RoomModelUI(4,"Fasui"));
-        roomModelUIArrayList.add(new RoomModelUI(5,"Pompilius"));
-        roomModelUIArrayList.add(new RoomModelUI(6,"Pompilius"));
-        roomModelUIArrayList.add(new RoomModelUI(7,"Pompilius"));
-        roomModelUIArrayList.add(new RoomModelUI(8,"Pompilius"));
-        roomModelUIArrayList.add(new RoomModelUI(9,"Pompilius"));
-
-
+        roomModelUIArrayList.add(new RoomModelUI(1,"Pat",));
+        roomModelUIArrayList.add(new RoomModelUI(2,"Saltea"));
+        roomModelUIArrayList.add(new RoomModelUI(3,"Televizor"));
+        roomModelUIArrayList.add(new RoomModelUI(4,"Aer conditionat"));
+        roomModelUIArrayList.add(new RoomModelUI(5,"Masa"));
+        roomModelUIArrayList.add(new RoomModelUI(6,"Lenjerie pat"));
+        roomModelUIArrayList.add(new RoomModelUI(7,"Cada/Cabina dus"));
+        roomModelUIArrayList.add(new RoomModelUI(8,"Usi defecte"));
+        roomModelUIArrayList.add(new RoomModelUI(9,"Minibar"));
         roomAdapter = new RoomAdapter(roomModelUIArrayList, new RoomAdapter.RoomMenuClickListener() {
             @Override
             public void onMenuClick(RoomModelUI item) {
