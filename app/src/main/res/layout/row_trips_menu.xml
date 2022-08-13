@@ -30,7 +30,7 @@
                     android:id="@+id/rv_row_trips"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    app:tripsMenuImageBinding="@{model.id}"
+                    app:tripsMenuImageBinding="@{model.type}"
                     android:src="@drawable/scubadiving"/>
                 <TextView
                     android:id="@+id/tv_TripsName"

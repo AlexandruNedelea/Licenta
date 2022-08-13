@@ -30,7 +30,6 @@
                     android:id="@+id/rv_row_balcony"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    app:balconyImageBinding="@{model.id}"
                     android:src="@drawable/scubadiving"/>
                 <TextView
                     android:id="@+id/tv_name"

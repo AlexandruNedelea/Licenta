@@ -4,9 +4,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class FirebaseHelper {
-    public static FirebaseHelper firebaseHelper;
+    private static FirebaseHelper firebaseHelper;
     private final DatabaseReference roomDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Room");
     private final DatabaseReference roomProblemsDatabaseReference = FirebaseDatabase.getInstance().getReference().child("room_problems");
+    private final DatabaseReference tripsDatabaseReference = FirebaseDatabase.getInstance().getReference().child("trips");
 
     public FirebaseHelper(){
     }
@@ -25,5 +26,9 @@ public class FirebaseHelper {
 
     public DatabaseReference getRoomProblemsDatabaseReference() {
         return roomProblemsDatabaseReference;
+    }
+
+    public DatabaseReference getTripsDatabaseReference() {
+        return tripsDatabaseReference;
     }
 }

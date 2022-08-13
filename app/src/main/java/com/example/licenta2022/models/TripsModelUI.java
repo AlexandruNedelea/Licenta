@@ -1,25 +1,26 @@
 package com.example.licenta2022.models;
 
 public class TripsModelUI {
-    private int id;
+    private String type;
     private String name;
 
-
-    public TripsModelUI(int id, String name) {
-        this.id = id;
+    public TripsModelUI(String type, String name) {
+        this.type = type;
         this.name = name;
     }
 
-    public int getId() {
-        return id;
+    public TripsModelUI() {
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getName() { return name; }
+
     public void setName(String name) { this.name = name; }
-
-
 }

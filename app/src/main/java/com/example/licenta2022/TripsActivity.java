@@ -14,7 +14,7 @@ import com.example.licenta2022.models.TripsModelUI;
 import java.util.ArrayList;
 
 public class TripsActivity extends BaseActivity<ActivityTripsBinding> {
-    public static String TEST_INTENT = "intent_key";
+    public static String TRIP_TYPE_ID = "intent_key";
     private TripsMenuAdapter tripsMenuAdapter;
 
     @Override
@@ -24,7 +24,6 @@ public class TripsActivity extends BaseActivity<ActivityTripsBinding> {
         setRecyclerView();
 
     }
-
 
     private void setRecyclerView() {
         ArrayList<TripsModelUI> tripsMenuModelUIArrayList = new ArrayList<>();
@@ -45,31 +44,12 @@ public class TripsActivity extends BaseActivity<ActivityTripsBinding> {
     }
 
     private void onItemMenuClick(TripsModelUI item) {
-        onDealsTripsParapantaClick(item.getId());
-
-//        switch (item.getId()) {
-//            case TripsActivityItemType.PARAPANTA:
-//                onDealsTripsParapantaClick();
-//                break;
-//            case TripsActivityItemType.SCUBADIVING:
-//                onDealsTripsScubadivingClick();
-//                break;
-//            case TripsActivityItemType.SURF:
-//                onDealsTripsSurfClick();
-//                break;
-//            case TripsActivityItemType.BOAT:
-//                onDealsTripsBoatClick();
-//                break;
-//            default:
-//                break;
-//
-//        }
+        onTripClicked(item.getType());
     }
 
-    private void onDealsTripsParapantaClick(int id) {
+    private void onTripClicked(String type) {
         Intent intent= new Intent(this, DealsTripsActivity.class);
-        intent.putExtra(TEST_INTENT, id);
+        intent.putExtra(TRIP_TYPE_ID, type);
         startActivity(intent);
     }
-
 }

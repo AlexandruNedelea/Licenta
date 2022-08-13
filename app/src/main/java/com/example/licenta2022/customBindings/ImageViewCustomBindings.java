@@ -40,7 +40,7 @@ public class ImageViewCustomBindings {
     }
 
     @BindingAdapter("tripsMenuImageBinding")
-    public static void tripsMenuImageBinding(AppCompatImageView view, int entryType) {
+    public static void tripsMenuImageBinding(AppCompatImageView view, String entryType) {
         int imageToDisplay = R.drawable.menaj;
         switch (entryType) {
             case TripsActivityItemType.PARAPANTA:
@@ -64,33 +64,14 @@ public class ImageViewCustomBindings {
     }
 
     @BindingAdapter("dealsTripsImageBinding")
-    public static void dealsTripsImageBinding(AppCompatImageView view, int entryType) {
-        int imageToDisplay = R.drawable.menaj;
-        switch (entryType) {
-            case TripsActivityItemType.PARAPANTA:
-                imageToDisplay = R.drawable.parapanta;
-                break;
-            case TripsActivityItemType.SCUBADIVING:
-                imageToDisplay = R.drawable.scubadiving;
-                break;
-            case TripsActivityItemType.SURF:
-                imageToDisplay = R.drawable.surf;
-                break;
-            case TripsActivityItemType.BOAT:
-                imageToDisplay = R.drawable.boat;
-                break;
-            default:
-                break;
-        }
+    public static void dealsTripsImageBinding(AppCompatImageView view, String imageUrl) {
         Glide.with(view.getContext())
-                .load(imageToDisplay)
+                .load(imageUrl)
                 .into(view);
     }
 
-
-
     @BindingAdapter("balconyImageBinding")
-    public static void balconyImageBinding(AppCompatImageView view, int entryType) {
+    public static void balconyImageBinding(AppCompatImageView view, String entryType) {
         int imageToDisplay = R.drawable.menaj;
         switch (entryType) {
             case TripsActivityItemType.PARAPANTA:

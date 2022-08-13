@@ -1,40 +1,39 @@
-package com.example.licenta2022.models;
+package com.example.licenta2022.models.Network;
 
-import com.example.licenta2022.models.Network.TripsModel;
+import com.example.licenta2022.models.DealsTripsUI;
 
-public class DealsTripsUI {
+public class TripsModel {
     private int id;
     private String imageUrl;
     private String price;
-    private String nameActivity;
-    private String age;
+    private String activityName;
+    private String minimumAge;
     private String location;
     private String duration;
     private String description;
 
-    public DealsTripsUI(int id, String imageUrl, String price, String nameActivity, String age, String placeToGo, String duration, String description) {
+    public TripsModel(int id, String price, String activityName, String minimumAge, String placeToGo, String duration, String description) {
         this.id = id;
-        this.imageUrl = imageUrl;
         this.price = price;
-        this.nameActivity = nameActivity;
-        this.age = age;
+        this.activityName = activityName;
+        this.minimumAge = minimumAge;
         this.location = placeToGo;
         this.duration = duration;
         this.description = description;
     }
 
-    public DealsTripsUI() {
+    public TripsModel(DealsTripsUI tripsModelUI) {
+        id = tripsModelUI.getId();
+        imageUrl = tripsModelUI.getImageUrl();
+        price = tripsModelUI.getPrice();
+        activityName = tripsModelUI.getNameActivity();
+        minimumAge = tripsModelUI.getAge();
+        location = tripsModelUI.getLocation();
+        duration = tripsModelUI.getDuration();
+        description = tripsModelUI.getDescription();
     }
 
-    public DealsTripsUI(TripsModel serverModel) {
-        id = serverModel.getId();
-        imageUrl = serverModel.getImageUrl();
-        price = serverModel.getPrice();
-        nameActivity = serverModel.getActivityName();
-        age = serverModel.getMinimumAge();
-        location = serverModel.getLocation();
-        duration = serverModel.getDuration();
-        description = serverModel.getDescription();
+    public TripsModel() {
     }
 
     public int getId() {
@@ -61,20 +60,20 @@ public class DealsTripsUI {
         this.price = price;
     }
 
-    public String getNameActivity() {
-        return nameActivity;
+    public String getActivityName() {
+        return activityName;
     }
 
-    public void setNameActivity(String nameActivity) {
-        this.nameActivity = nameActivity;
+    public void setActivityName(String activityName) {
+        this.activityName = activityName;
     }
 
-    public String getAge() {
-        return age;
+    public String getMinimumAge() {
+        return minimumAge;
     }
 
-    public void setAge(String age) {
-        this.age = age;
+    public void setMinimumAge(String minimumAge) {
+        this.minimumAge = minimumAge;
     }
 
     public String getLocation() {
