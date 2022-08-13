@@ -24,7 +24,6 @@ public class HotelActivity extends BaseActivity<ActivityHotelBinding> {
         setRecyclerView();
     }
 
-
     private void setRecyclerView() {
         ArrayList<HotelMenuModelUI> hotelMenuModelUIArrayList = new ArrayList<>();
         hotelMenuModelUIArrayList.add(new HotelMenuModelUI(HotelItemType.ROOM, "Room"));

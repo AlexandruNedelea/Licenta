@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Licenta2022">
         <activity
-            android:name=".QRCodeActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".RoomServiceActivity"
@@ -45,7 +45,7 @@
             android:name=".SecondActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".QRCodeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -43,5 +43,35 @@
                 android:gravity="center"
                 android:textColor="@color/white" />-->
         </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <com.journeyapps.barcodescanner.DecoratedBarcodeView
+                android:id="@+id/zxing_barcode_scanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:zxing_scanner_layout="@layout/custom_qrcode_scanner_view"
+                app:zxing_use_texture_view="true" />
+
+            <com.example.licenta2022.customViews.ScanQRCodeOverlayView
+                android:id="@+id/v_with_rounded_border"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_top_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:textColor="@color/white" />
+        </FrameLayout>
     </LinearLayout>
 </layout>
