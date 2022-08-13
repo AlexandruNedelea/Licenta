@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="model"
+            type="com.example.licenta2022.models.RoomModelUI" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="6dp"
+        app:cardCornerRadius="12dp"
+        android:layout_margin="12dp"
+        app:cardBackgroundColor="@{model.selected ? @color/background_color : @color/background_color_selected}">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#6f6f6f"
+                android:textSize="18sp"
+                android:text="@{model.name}"
+                android:outlineAmbientShadowColor="@color/text_color"
+                android:textColorHighlight="@{model.selected ? @color/text_color : @color/text_color_selected}"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
