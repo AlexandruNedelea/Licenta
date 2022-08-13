@@ -1,8 +1,5 @@
 package com.example.licenta2022.helpers;
 
-import android.content.Context;
-import android.util.DisplayMetrics;
-
 public class DataStorageHelper {
     private static DataStorageHelper instance = null;
     private String roomNumber;

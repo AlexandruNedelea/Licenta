@@ -1,10 +1,16 @@
 package com.example.licenta2022.models.Network;
 
-public class RoomDetails {
+public class RoomProblemsModel {
     private String id;
     private String name;
+    private String date;
 
-    public RoomDetails() {
+    public RoomProblemsModel() {
+    }
+
+    public RoomProblemsModel(String id, String name, String date) {
+        this.id = id;
+        this.name = name;
     }
 
     public String getId() {
@@ -23,8 +29,11 @@ public class RoomDetails {
         this.name = name;
     }
 
-    public RoomDetails(String id, String name) {
-        this.id = id;
-        this.name = name;
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

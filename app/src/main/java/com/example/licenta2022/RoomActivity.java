@@ -6,11 +6,12 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.example.licenta2022.ItemType.BalconyItemType;
 import com.example.licenta2022.activities.BaseActivity;
 import com.example.licenta2022.adapters.RoomAdapter;
 import com.example.licenta2022.databinding.ActivityRoomBinding;
-import com.example.licenta2022.models.Network.RoomDetails;
+import com.example.licenta2022.helpers.DataConverterHelper;
+import com.example.licenta2022.helpers.DataStorageHelper;
+import com.example.licenta2022.models.Network.RoomProblemsModel;
 import com.example.licenta2022.models.RoomModelUI;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -18,13 +19,12 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class RoomActivity extends BaseActivity<ActivityRoomBinding> {
     public static String TEST_INTENT = "intent_key";
-    private RoomAdapter roomAdapter;
+    private final ArrayList<RoomModelUI> roomProblemsListUI = new ArrayList<>();
+    private int problemsSentToServer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,17 +37,16 @@ public class RoomActivity extends BaseActivity<ActivityRoomBinding> {
     }
 
     private void setRecyclerView() {
-        ArrayList<RoomModelUI> roomModelUIArrayList = new ArrayList<>();
-        roomModelUIArrayList.add(new RoomModelUI(1,"Pat",));
-        roomModelUIArrayList.add(new RoomModelUI(2,"Saltea"));
-        roomModelUIArrayList.add(new RoomModelUI(3,"Televizor"));
-        roomModelUIArrayList.add(new RoomModelUI(4,"Aer conditionat"));
-        roomModelUIArrayList.add(new RoomModelUI(5,"Masa"));
-        roomModelUIArrayList.add(new RoomModelUI(6,"Lenjerie pat"));
-        roomModelUIArrayList.add(new RoomModelUI(7,"Cada/Cabina dus"));
-        roomModelUIArrayList.add(new RoomModelUI(8,"Usi defecte"));
-        roomModelUIArrayList.add(new RoomModelUI(9,"Minibar"));
-        roomAdapter = new RoomAdapter(roomModelUIArrayList, new RoomAdapter.RoomMenuClickListener() {
+        roomProblemsListUI.add(new RoomModelUI(1,"Pat"));
+        roomProblemsListUI.add(new RoomModelUI(2,"Saltea"));
+        roomProblemsListUI.add(new RoomModelUI(3,"Televizor"));
+        roomProblemsListUI.add(new RoomModelUI(4,"Aer conditionat"));
+        roomProblemsListUI.add(new RoomModelUI(5,"Masa"));
+        roomProblemsListUI.add(new RoomModelUI(6,"Lenjerie pat"));
+        roomProblemsListUI.add(new RoomModelUI(7,"Cada/Cabina dus"));
+        roomProblemsListUI.add(new RoomModelUI(8,"Usi defecte"));
+        roomProblemsListUI.add(new RoomModelUI(9,"Minibar"));
+        var roomAdapter = new RoomAdapter(roomProblemsListUI, new RoomAdapter.RoomMenuClickListener() {
             @Override
             public void onMenuClick(RoomModelUI item) {
                 onItemMenuClick(item);
@@ -64,7 +63,7 @@ public class RoomActivity extends BaseActivity<ActivityRoomBinding> {
         dataBinding.btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onSendRoomToServer();
+                onSendRoomProblemsToServer();
             }
         });
 
@@ -80,13 +79,27 @@ public class RoomActivity extends BaseActivity<ActivityRoomBinding> {
         FirebaseHelper.getInstance().getRoomDatabaseReference().child("a39124d1-1001-4cfd-b4ef-96bac9523761").removeValue();
 
     }
-    private void onSendRoomToServer() {
-        String uuid = UUID.randomUUID().toString();
-        RoomDetails roomDetails = new RoomDetails(uuid, "Test room");
-        FirebaseHelper.getInstance().getRoomDatabaseReference().child(uuid).setValue(roomDetails).addOnSuccessListener(new OnSuccessListener<Void>() {
+    private void onSendRoomProblemsToServer() {
+        var problemsToSendToServer = new ArrayList<RoomProblemsModel>();
+        for (var roomProblem : roomProblemsListUI) {
+            if (roomProblem.isSelected()) {
+                problemsToSendToServer.add(DataConverterHelper.getInstance().roomProblemsModelsFromUIModel(roomProblem));
+            }
+        }
+        for (var problem:problemsToSendToServer) {
+            sendProblemToServer(problem, problemsToSendToServer.size());
+        }
+    }
+
+    private void sendProblemToServer(RoomProblemsModel problem, int totalProblems) {
+        FirebaseHelper.getInstance().getRoomProblemsDatabaseReference()
+                .child(DataStorageHelper.getInstance().getRoomNumber())
+                .push()
+                .setValue(problem)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
-                Toast.makeText(RoomActivity.this, "Adaugare cu succes", Toast.LENGTH_SHORT).show();
+                checkIfAllProblemsSent(totalProblems);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -96,23 +109,28 @@ public class RoomActivity extends BaseActivity<ActivityRoomBinding> {
         });
     }
 
+    private void checkIfAllProblemsSent(int totalProblems) {
+        if (++problemsSentToServer == totalProblems) {
+            Toast.makeText(RoomActivity.this, "Adaugare cu succes", Toast.LENGTH_SHORT).show();
+            finish();
+        }
+    }
+
     private void getDataFromServer() {
         FirebaseHelper.getInstance().getRoomDatabaseReference().addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                ArrayList<RoomDetails> roomDetailsArrayList = new ArrayList<>();
+                ArrayList<RoomProblemsModel> roomProblemsModelArrayList = new ArrayList<>();
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
-                    RoomDetails room = dataSnapshot1.getValue(RoomDetails.class);
+                    RoomProblemsModel room = dataSnapshot1.getValue(RoomProblemsModel.class);
                     if(room != null){
-                        roomDetailsArrayList.add(room);
+                        roomProblemsModelArrayList.add(room);
                     }
                 }
-                int a =0;
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
     }

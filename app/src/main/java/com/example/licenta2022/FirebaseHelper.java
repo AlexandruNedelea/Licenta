@@ -6,6 +6,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class FirebaseHelper {
     public static FirebaseHelper firebaseHelper;
     private final DatabaseReference roomDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Room");
+    private final DatabaseReference roomProblemsDatabaseReference = FirebaseDatabase.getInstance().getReference().child("room_problems");
 
     public FirebaseHelper(){
     }
@@ -22,5 +23,7 @@ public class FirebaseHelper {
         return roomDatabaseReference;
     }
 
-
+    public DatabaseReference getRoomProblemsDatabaseReference() {
+        return roomProblemsDatabaseReference;
+    }
 }
