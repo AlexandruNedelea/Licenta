@@ -36,7 +36,7 @@
             android:name=".TripsActivity"
             android:exported="false" />
         <activity
-            android:name=".HotelActivity"
+            android:name=".QRCodeActivity"
             android:exported="false" />
         <activity
             android:name=".ListeActivity"
@@ -45,7 +45,7 @@
             android:name=".SecondActivity"
             android:exported="false" />
         <activity
-            android:name=".QRCodeActivity"
+            android:name=".HotelActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

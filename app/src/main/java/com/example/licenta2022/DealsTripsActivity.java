@@ -25,7 +25,7 @@ public class DealsTripsActivity extends BaseActivity<ActivityDealsTripsBinding> 
     protected void onCreate(Bundle savedInstanceState) {
         dataBinding = ActivityDealsTripsBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
-
+        //sendTripToServer();
         setTripTypeFromIntent();
     }
 
@@ -33,7 +33,7 @@ public class DealsTripsActivity extends BaseActivity<ActivityDealsTripsBinding> 
         var uiModel = new DealsTripsUI(10,"", "Price: Una Lira","Name:BOAT1","Age:70+","Where:Ghedu","Duration:3 hours","Description:Descrierea urmeaza sa o pun dar mai intai vreau sa ma asigur ca functioneaza cum trebuie");
         var modelToSendToServer = new TripsModel(uiModel);
         FirebaseHelper.getInstance().getTripsDatabaseReference()
-                .child(TripsActivityItemType.PARAPANTA)
+                .child(TripsActivityItemType.SURF)
                 .push()
                 .setValue(modelToSendToServer)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -43,6 +43,7 @@ public class DealsTripsActivity extends BaseActivity<ActivityDealsTripsBinding> 
                     }
                 });
     }
+
 
     private void setTripTypeFromIntent() {
         var tripType = getIntent().getStringExtra(TripsActivity.TRIP_TYPE_ID);

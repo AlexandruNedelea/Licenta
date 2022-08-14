@@ -1,0 +1,48 @@
+{
+  "Room": {
+    "8dc5f7e1-49f4-450d-a3dd-f418fafcafdb": {
+      "id": "8dc5f7e1-49f4-450d-a3dd-f418fafcafdb",
+      "name": "Test room"
+    },
+    "aab6723d-480a-4305-9bff-c4e0094203d0": {
+      "id": "aab6723d-480a-4305-9bff-c4e0094203d0",
+      "name": "Test room"
+    },
+    "d429a4b7-000f-40a4-a892-1dedc3fd1ed7": {
+      "id": "d429a4b7-000f-40a4-a892-1dedc3fd1ed7",
+      "name": "Test room"
+    },
+    "eca80807-0b9b-4032-9da7-63c591660d34": {
+      "id": "eca80807-0b9b-4032-9da7-63c591660d34",
+      "name": "Test room"
+    },
+    "f3615f28-070a-4130-b439-3c32e3605577": {
+      "id": "f3615f28-070a-4130-b439-3c32e3605577",
+      "name": "Test room"
+    }
+  },
+  "trips": {
+    "parapanta": {
+      "-N9MCOCN7f6kQKjVzDPM": {
+        "activityName": "Name:BOAT1",
+        "description": "Description:Descrierea urmeaza sa o pun dar mai intai vreau sa ma asigur ca functioneaza cum trebuie",
+        "duration": "Duration:3 hours",
+        "id": 10,
+        "imageUrl": "",
+        "location": "Where:Ghedu",
+        "minimumAge": "Age:70+",
+        "price": "Price: Una Lira"
+      },
+      "-N9MCP9PSWlCp3U9cPh1": {
+        "activityName": "Name:BOAT1",
+        "description": "Description:Descrierea urmeaza sa o pun dar mai intai vreau sa ma asigur ca functioneaza cum trebuie",
+        "duration": "Duration:3 hours",
+        "id": 10,
+        "imageUrl": "",
+        "location": "Where:Ghedu",
+        "minimumAge": "Age:70+",
+        "price": "Price: Una Lira"
+      }
+    }
+  }
+}
