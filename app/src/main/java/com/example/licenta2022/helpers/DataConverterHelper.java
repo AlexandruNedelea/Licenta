@@ -1,12 +1,10 @@
 package com.example.licenta2022.helpers;
 
 import com.example.licenta2022.models.DealsTripsUI;
-import com.example.licenta2022.models.Network.RoomProblemsModel;
-import com.example.licenta2022.models.Network.TripsModel;
+import com.example.licenta2022.models.network.RoomProblemsModel;
+import com.example.licenta2022.models.network.TripsModel;
 import com.example.licenta2022.models.RoomModelUI;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 

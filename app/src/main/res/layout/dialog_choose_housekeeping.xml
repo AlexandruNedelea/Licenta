@@ -36,7 +36,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    style="@style/AigiaPrimaryButton"
+                    android:textAllCaps="false"
+                    app:cornerRadius="20dp"
+                    android:backgroundTint="@android:color/holo_red_dark"
                     android:text="Select housekeeping for the selected date and time"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>

@@ -10,7 +10,7 @@ import com.example.licenta2022.adapters.DealsTripsAdapter;
 import com.example.licenta2022.databinding.ActivityDealsTripsBinding;
 import com.example.licenta2022.helpers.DataConverterHelper;
 import com.example.licenta2022.models.DealsTripsUI;
-import com.example.licenta2022.models.Network.TripsModel;
+import com.example.licenta2022.models.network.TripsModel;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

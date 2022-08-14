@@ -1,6 +1,6 @@
 package com.example.licenta2022.models;
 
-import com.example.licenta2022.models.Network.TripsModel;
+import com.example.licenta2022.models.network.TripsModel;
 
 public class DealsTripsUI {
     private int id;

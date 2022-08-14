@@ -1,4 +1,4 @@
-package com.example.licenta2022.models.Network;
+package com.example.licenta2022.models.network;
 
 public class RoomProblemsModel {
     private String id;

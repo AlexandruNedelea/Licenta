@@ -11,7 +11,7 @@ import com.example.licenta2022.adapters.RoomAdapter;
 import com.example.licenta2022.databinding.ActivityRoomBinding;
 import com.example.licenta2022.helpers.DataConverterHelper;
 import com.example.licenta2022.helpers.DataStorageHelper;
-import com.example.licenta2022.models.Network.RoomProblemsModel;
+import com.example.licenta2022.models.network.RoomProblemsModel;
 import com.example.licenta2022.models.RoomModelUI;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;

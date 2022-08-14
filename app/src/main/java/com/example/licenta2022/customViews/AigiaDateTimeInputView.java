@@ -142,8 +142,8 @@ public class AigiaDateTimeInputView extends RelativeLayout {
     }
 
     private void setClickListeners() {
-        dayTv.setOnClickListener(view -> showDatePicker());
-        dateTv.setOnClickListener(view -> showDatePicker());
+        dayTv.setOnClickListener(view -> AppExecutors.getInstance().mainThread().execute(this::showDatePicker));
+        dateTv.setOnClickListener(view -> AppExecutors.getInstance().mainThread().execute(this::showDatePicker));
         timeTv.setOnClickListener(view -> AppExecutors.getInstance().mainThread().execute(() -> {
             showProgressDialog();
             MaterialTimePicker materialTimePicker = getTimePicker(time);
