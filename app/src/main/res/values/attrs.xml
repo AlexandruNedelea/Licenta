@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DateTimeInputView">
+        <attr name="dateTimeInputPrimaryTitle" format="string" />
+        <attr name="dateTimeInputSecondaryTitle" format="string" />
+    </declare-styleable>
+</resources>

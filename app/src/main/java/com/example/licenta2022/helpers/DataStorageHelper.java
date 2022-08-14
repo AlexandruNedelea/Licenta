@@ -15,6 +15,9 @@ public class DataStorageHelper {
     }
 
     public String getRoomNumber() {
+        if (roomNumber == null) {
+            return "423";
+        }
         return roomNumber;
     }
 

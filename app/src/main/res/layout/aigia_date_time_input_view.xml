@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <RelativeLayout
+        android:id="@+id/rl_date_time_input_container"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@drawable/card_white_background_shadow"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_date_time_input_date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            style="@style/PrimaryHeaderText"
+            app:textAllCaps="true"
+            android:text="Date"/>
+        
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_date_time_primary"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_toEndOf="@+id/tv_date_time_input_date_text"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_date_time_input_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="4dp"
+            android:layout_toStartOf="@+id/tv_date_time_input_date"
+            android:text="3"
+            android:textColor="@color/regular_text"
+            android:textSize="24sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_date_time_input_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/v_date_time_input_center_view"
+            android:text="Sep \n2021"
+            android:textColor="@color/regular_text"
+            android:textSize="10sp"/>
+
+        <View
+            android:id="@+id/v_date_time_input_center_view"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="@color/background_color"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_date_time_input_time_text"
+            style="@style/PrimaryHeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/v_date_time_input_center_view"
+            android:text="Time"
+            app:textAllCaps="true" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_date_time_secondary"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_toEndOf="@+id/tv_date_time_input_time_text"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_date_time_input_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/regular_text"
+            android:textSize="18sp"
+            android:text="20:00"/>
+    </RelativeLayout>
+</layout>

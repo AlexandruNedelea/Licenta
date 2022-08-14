@@ -9,6 +9,7 @@ import com.example.licenta2022.ItemType.HotelItemType;
 import com.example.licenta2022.activities.BaseActivity;
 import com.example.licenta2022.adapters.HotelMenuAdapter;
 import com.example.licenta2022.databinding.ActivityHotelBinding;
+import com.example.licenta2022.dialogs.ChooseHousekeepingDialog;
 import com.example.licenta2022.models.HotelMenuModelUI;
 
 import java.util.ArrayList;
@@ -58,6 +59,7 @@ public class HotelActivity extends BaseActivity<ActivityHotelBinding> {
                 onMenuRoomServiceClick();
                 break;
             case HotelItemType.MENAGERIE:
+                onMengarieClicked(item);
                 break;
             case HotelItemType.TRIPS:
                 onMenuTripsClick(item);
@@ -66,6 +68,11 @@ public class HotelActivity extends BaseActivity<ActivityHotelBinding> {
                 break;
 
         }
+    }
+
+    private void onMengarieClicked(HotelMenuModelUI item) {
+        var dialog = ChooseHousekeepingDialog.newInstance();
+        dialog.show(getSupportFragmentManager(), "housekeepingDialog");
     }
 
     private void onMenuRoomServiceClick() {
