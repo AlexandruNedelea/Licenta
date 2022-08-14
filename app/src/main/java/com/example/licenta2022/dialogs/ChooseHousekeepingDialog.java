@@ -14,6 +14,7 @@ import com.example.licenta2022.FirebaseHelper;
 import com.example.licenta2022.R;
 import com.example.licenta2022.databinding.DialogChooseHousekeepingBinding;
 import com.example.licenta2022.helpers.DataStorageHelper;
+import com.example.licenta2022.helpers.ViewUtils;
 import com.example.licenta2022.models.network.HouseKeepingModel;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
@@ -54,6 +55,8 @@ public class ChooseHousekeepingDialog extends BaseBottomSheetDialogFragment {
     }
 
     private void init() {
+        dataBinding.dtvAddLabResultsDateTimeInput.setActivityContext(requireActivity());
+        ViewUtils.getInstance().setPickerMinDateToday(dataBinding.dtvAddLabResultsDateTimeInput);
         setListeners();
     }
 
