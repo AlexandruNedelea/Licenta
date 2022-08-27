@@ -9,80 +9,134 @@
     </data>
 
 
-        <androidx.cardview.widget.CardView
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="6dp"
+        app:cardCornerRadius="12dp"
+        android:layout_margin="12dp">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardElevation="6dp"
-            app:cardCornerRadius="12dp"
-            android:layout_margin="12dp">
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
-            <LinearLayout
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_food_menu"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/scubadiving" />
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/rv_row_balcony"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/scubadiving" />
-
-                <LinearLayout
+                <TextView
+                    android:id="@+id/tv_room_service_food"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="160dp"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:layout_marginTop="12dp"
+                    android:text="Food: "
+                    android:textColor="#6f6f6f"
+                    android:textSize="8sp" />
 
-                    <TextView
-                        android:id="@+id/tvFoodName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@{model.foodname}"
-                        android:textColor="#6f6f6f"
-                        android:textSize="8sp" />
+                <TextView
+                    android:id="@+id/tv_room_service_food_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/tv_room_service_food"
+                    android:layout_marginTop="12dp"
+                    android:text="@{model.foodname}"
+                    android:textColor="#6f6f6f"
+                    android:textSize="8sp" />
 
-                    <TextView
-                        android:id="@+id/tvPrice"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@{String.valueOf(model.price)}"
-                        android:textColor="#6f6f6f"
-                        android:textSize="8sp" />
+                <TextView
+                    android:id="@+id/tv_text_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_room_service_food_name"
+                    android:layout_marginTop="12dp"
+                    android:text="Price: "
+                    android:textColor="#6f6f6f"
+                    android:textSize="8sp" />
+                <TextView
+                    android:id="@+id/tv_value_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/tv_text_price"
+                    android:layout_below="@+id/tv_room_service_food_name"
+                    android:layout_marginTop="12dp"
+                    android:text="@{String.valueOf(model.price)}"
+                    android:textColor="#6f6f6f"
+                    android:textSize="8sp" />
 
-                    <TextView
-                        android:id="@+id/tvAmount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@{model.amount}"
-                        android:textColor="#6f6f6f"
-                        android:textSize="8sp" />
+                <TextView
+                    android:id="@+id/tv_text_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_text_price"
+                    android:layout_marginTop="12dp"
+                    android:text="Amount: "
+                    android:textColor="#6f6f6f"
+                    android:textSize="8sp" />
 
-                    <TextView
-                        android:id="@+id/tvAllergens"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@{model.allergens}"
-                        android:textColor="#6f6f6f"
-                        android:textSize="8sp" />
+                <TextView
+                    android:id="@+id/tv_value_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/tv_text_amount"
+                    android:layout_below="@+id/tv_text_price"
+                    android:layout_marginTop="12dp"
+                    android:text="@{model.amount}"
+                    android:textColor="#6f6f6f"
+                    android:textSize="8sp" />
 
-                    <TextView
-                        android:id="@+id/tvDescription"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@{model.description}"
-                        android:textColor="#6f6f6f"
-                        android:textSize="8sp" />
+                <TextView
+                    android:id="@+id/tv_text_allergens"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_value_amount"
+                    android:layout_marginTop="12dp"
+                    android:text="Allergens: "
+                    android:textColor="#6f6f6f"
+                    android:textSize="8sp" />
 
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_value_allergens"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/tv_text_allergens"
+                    android:layout_below="@+id/tv_value_amount"
+                    android:layout_marginTop="12dp"
+                    android:text="@{model.allergens}"
+                    android:textColor="#6f6f6f"
+                    android:textSize="8sp" />
 
+                <TextView
+                    android:id="@+id/tv_text_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_text_allergens"
+                    android:layout_marginTop="12dp"
+                    android:text="Description: "
+                    android:textColor="#6f6f6f"
+                    android:textSize="8sp" />
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/tv_value_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/tv_text_description"
+                    android:layout_below="@+id/tv_text_allergens"
+                    android:layout_marginTop="12dp"
+                    android:text="@{model.description}"
+                    android:textColor="#6f6f6f"
+                    android:textSize="8sp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </layout>
