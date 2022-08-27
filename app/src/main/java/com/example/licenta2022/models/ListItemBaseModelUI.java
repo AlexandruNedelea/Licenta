@@ -1,6 +1,8 @@
 package com.example.licenta2022.models;
 
-public class ListItemBaseModelUI {
+import androidx.databinding.BaseObservable;
+
+public class ListItemBaseModelUI extends BaseObservable {
     private int type;
 
     public ListItemBaseModelUI() {

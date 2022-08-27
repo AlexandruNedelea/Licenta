@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Cosmin/Licenta Alex/app/src/main/res/drawable/ic_plus_sign.xml" value="0.196" />
         <entry key="..\:/Cosmin/Licenta Alex/app/src/main/res/layout/activity_qrcode.xml" value="0.358695652173913" />
+        <entry key="..\:/Cosmin/Licenta Alex/app/src/main/res/layout/activity_room_service.xml" value="0.18802083333333333" />
         <entry key="..\:/Cosmin/Licenta Alex/app/src/main/res/layout/custom_qrcode_scanner_view.xml" value="0.358695652173913" />
+        <entry key="..\:/Cosmin/Licenta Alex/app/src/main/res/layout/dialog_choose_housekeeping.xml" value="0.15760869565217392" />
         <entry key="..\:/Cosmin/Licenta Alex/app/src/main/res/layout/row_balcony.xml" value="0.18802083333333333" />
         <entry key="..\:/Cosmin/Licenta Alex/app/src/main/res/layout/row_deals_trips.xml" value="0.18802083333333333" />
         <entry key="..\:/Cosmin/Licenta Alex/app/src/main/res/layout/row_menu_room_service.xml" value="0.17831813576494426" />

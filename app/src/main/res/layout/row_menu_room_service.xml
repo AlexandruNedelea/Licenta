@@ -6,8 +6,8 @@
         <variable
             name="model"
             type="com.example.licenta2022.models.RoomServiceModelUI" />
+        <import type="android.view.View"/>
     </data>
-
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -16,22 +16,25 @@
         app:cardCornerRadius="12dp"
         android:layout_margin="12dp">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="16dp">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/iv_food_menu"
+                android:id="@+id/iv_room_service"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:src="@drawable/scubadiving" />
 
             <RelativeLayout
+                android:id="@+id/rl_room_service_details_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/iv_room_service"
                 android:orientation="vertical">
 
                 <TextView
@@ -135,8 +138,41 @@
                     android:text="@{model.description}"
                     android:textColor="#6f6f6f"
                     android:textSize="8sp" />
-
             </RelativeLayout>
-        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_room_service_details_container"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:visibility="@{model.selected ? View.VISIBLE : View.GONE}">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="20dp"
+                    android:backgroundTint="@color/transparent"
+                    android:onClick="@{() -> model.decreaseQuantity()}"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_minus_sign" />
+
+                <TextView
+                    android:id="@+id/tv_room_service_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="@{String.valueOf(model.quantity)}"
+                    android:textColor="#6f6f6f"
+                    android:textSize="38sp" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="@color/transparent"
+                    android:onClick="@{() -> model.increaseQuantity()}"
+                    android:src="@drawable/ic_plus_sign" />
+            </LinearLayout>
+        </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </layout>

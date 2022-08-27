@@ -38,7 +38,7 @@
                     android:layout_marginTop="30dp"
                     android:textAllCaps="false"
                     app:cornerRadius="20dp"
-                    android:backgroundTint="@android:color/holo_red_dark"
+                    android:backgroundTint="@color/primary_button_color"
                     android:text="Select housekeeping for the selected date and time"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>

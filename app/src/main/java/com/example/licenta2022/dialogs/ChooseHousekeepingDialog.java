@@ -71,7 +71,7 @@ public class ChooseHousekeepingDialog extends BaseBottomSheetDialogFragment {
 
     private void onRequireHousekeeping() {
         var selectedDate = dataBinding.dtvAddLabResultsDateTimeInput.getFullSelectedDate();
-        var housekeeping=new HouseKeepingModel(DataStorageHelper.getInstance().getRoomNumber(),selectedDate);
+        var housekeeping = new HouseKeepingModel(DataStorageHelper.getInstance().getRoomNumber(),selectedDate);
 
         FirebaseHelper.getInstance().getHousekeepingDatabaseReference()
                 .child(housekeeping.getRoomNumber())

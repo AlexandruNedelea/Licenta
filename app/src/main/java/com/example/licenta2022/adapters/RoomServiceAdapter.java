@@ -6,11 +6,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.licenta2022.enums.ListItemGenericType;
-import com.example.licenta2022.models.HotelMenuModelUI;
 import com.example.licenta2022.models.ListHeaderModelUI;
 import com.example.licenta2022.models.ListItemBaseModelUI;
 import com.example.licenta2022.models.RoomServiceModelUI;
-import com.example.licenta2022.viewHolders.HotelMenuViewHolder;
 import com.example.licenta2022.viewHolders.RoomServiceViewHolder;
 import com.example.licenta2022.viewHolders.RoomTitleViewHolder;
 
