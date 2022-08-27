@@ -29,7 +29,7 @@ public class HotelActivity extends BaseActivity<ActivityHotelBinding> {
         ArrayList<HotelMenuModelUI> hotelMenuModelUIArrayList = new ArrayList<>();
         hotelMenuModelUIArrayList.add(new HotelMenuModelUI(HotelItemType.ROOM, "Room"));
         hotelMenuModelUIArrayList.add(new HotelMenuModelUI(HotelItemType.ROOM_SERVICE, "Room Service"));
-        hotelMenuModelUIArrayList.add(new HotelMenuModelUI(HotelItemType.MENAGERIE, "Menagerie"));
+        hotelMenuModelUIArrayList.add(new HotelMenuModelUI(HotelItemType.MENAGERIE, "Maid"));
         hotelMenuModelUIArrayList.add(new HotelMenuModelUI(HotelItemType.TRIPS, "Trips"));
 
         hotelMenuAdapter = new HotelMenuAdapter(hotelMenuModelUIArrayList, new HotelMenuAdapter.HotelMenuClickListener() {
@@ -57,7 +57,7 @@ public class HotelActivity extends BaseActivity<ActivityHotelBinding> {
                 onMenuRoomServiceClick();
                 break;
             case HotelItemType.MENAGERIE:
-                onMengarieClicked(item);
+                onMaidClicked(item);
                 break;
             case HotelItemType.TRIPS:
                 onMenuTripsClick(item);
@@ -68,7 +68,7 @@ public class HotelActivity extends BaseActivity<ActivityHotelBinding> {
         }
     }
 
-    private void onMengarieClicked(HotelMenuModelUI item) {
+    private void onMaidClicked(HotelMenuModelUI item) {
         var dialog = ChooseHousekeepingDialog.newInstance();
         dialog.show(getSupportFragmentManager(), "housekeepingDialog");
     }
