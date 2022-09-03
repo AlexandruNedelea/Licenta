@@ -11,18 +11,18 @@ public class RoomServiceModelUI extends ListItemBaseModelUI {
     private String foodname;
     private int price;
     private String amount;
-    private String allergens;
+    //private String allergens;
     private String description;
     private int quantity;
     private boolean selected;
 
-    public RoomServiceModelUI(int type, int id, String foodname, int price, String amount, String allergens, String description) {
+    public RoomServiceModelUI(int type, int id, String foodname, int price, String amount, String description) {
         super(type);
         this.id = id;
         this.foodname = foodname;
         this.price = price;
         this.amount = amount;
-        this.allergens = allergens;
+        //this.allergens = allergens;
         this.description = description;
     }
 
@@ -32,7 +32,7 @@ public class RoomServiceModelUI extends ListItemBaseModelUI {
         this.foodname = serverModel.getFoodname();
         this.price = serverModel.getPrice();
         this.amount = serverModel.getAmount();
-        this.allergens = serverModel.getAllergens();
+        //this.allergens = serverModel.getAllergens();
         this.description = serverModel.getDescription();
         this.quantity = serverModel.getQuantity();
     }
@@ -69,21 +69,13 @@ public class RoomServiceModelUI extends ListItemBaseModelUI {
         this.amount = amount;
     }
 
-    public String getAllergens() {
-        return allergens;
-    }
+    //public String getAllergens() {return allergens;}
 
-    public void setAllergens(String allergens) {
-        this.allergens = allergens;
-    }
+   // public void setAllergens(String allergens) {this.allergens = allergens;}
 
-    public String getDescription() {
-        return description;
-    }
+    public String getDescription() {return description;}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    public void setDescription(String description) {this.description = description;}
 
     @Bindable
     public int getQuantity() {

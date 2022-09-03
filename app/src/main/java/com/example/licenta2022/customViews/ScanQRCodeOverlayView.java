@@ -56,8 +56,7 @@ public class ScanQRCodeOverlayView extends View {
         canvas.drawPaint(mBackgroundPaint);
         float centerX = this.getWidth() / 2f;
         float centerY = this.getHeight() / 2f;
-        var scanAreaRect = new RectF(centerX - (scanAreaSize / 2), centerY - (scanAreaSize / 2),
-                centerX + (scanAreaSize / 2), centerY + (scanAreaSize / 2));
+        var scanAreaRect = new RectF(centerX - (scanAreaSize / 2), centerY - (scanAreaSize / 2), centerX + (scanAreaSize / 2), centerY + (scanAreaSize / 2));
         var cornerRadius = ViewUtils.getInstance().convertDpToPixel(40f, getContext());
 
         canvas.drawRoundRect(scanAreaRect, cornerRadius, cornerRadius, mRoundedRectPaint);

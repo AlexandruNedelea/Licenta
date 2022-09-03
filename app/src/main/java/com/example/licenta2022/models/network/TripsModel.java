@@ -12,15 +12,24 @@ public class TripsModel {
     private String duration;
     private String description;
 
-    public TripsModel(int id, String price, String activityName, String minimumAge, String placeToGo, String duration, String description) {
+
+
+
+
+    public TripsModel(int id, String imageUrl, String price, String activityName, String minimumAge, String location, String duration, String description) {
         this.id = id;
+        this.imageUrl = imageUrl;
         this.price = price;
         this.activityName = activityName;
         this.minimumAge = minimumAge;
-        this.location = placeToGo;
+        this.location = location;
         this.duration = duration;
         this.description = description;
     }
+
+    public TripsModel() {
+    }
+
 
     public TripsModel(DealsTripsUI tripsModelUI) {
         id = tripsModelUI.getId();
@@ -33,8 +42,6 @@ public class TripsModel {
         description = tripsModelUI.getDescription();
     }
 
-    public TripsModel() {
-    }
 
     public int getId() {
         return id;
@@ -99,4 +106,5 @@ public class TripsModel {
     public void setDescription(String description) {
         this.description = description;
     }
+
 }

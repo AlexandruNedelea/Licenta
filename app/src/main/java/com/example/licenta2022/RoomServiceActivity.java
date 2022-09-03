@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.licenta2022.ItemType.RoomServiceActivityItemType;
 import com.example.licenta2022.activities.BaseActivity;
 import com.example.licenta2022.adapters.RoomServiceAdapter;
 import com.example.licenta2022.databinding.ActivityRoomServiceBinding;
@@ -51,7 +52,7 @@ public class RoomServiceActivity extends BaseActivity<ActivityRoomServiceBinding
                 }
             }
         }
-        if (orderedItems.size() > 1) {
+        if (orderedItems.size() > 0) {
             sendOrdersToServer(orderedItems);
         }
     }
@@ -84,25 +85,28 @@ public class RoomServiceActivity extends BaseActivity<ActivityRoomServiceBinding
         }
     }
 
+
     private void setRecyclerView() {
-        roomServiceModelUIArrayList.add(new ListHeaderModelUI(ListItemGenericType.HEADER,"Mic dejun"));
-        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,1,"fre",246,"50kg","aici sunt alergeni","Aici trebuie sa fie descriere"));
-        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,2,"fre",246,"50kg","aici sunt alergeni","Aici trebuie sa fie descriere"));
-        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,3,"fre",246,"50kg","aici sunt alergeni","Aici trebuie sa fie descriere"));
-        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,4,"fre",246,"50kg","aici sunt alergeni","Aici trebuie sa fie descriere"));
-        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,5,"fre",246,"50kg","aici sunt alergeni","Aici trebuie sa fie descriere"));
-        roomServiceModelUIArrayList.add(new ListHeaderModelUI(ListItemGenericType.HEADER,"Pranz"));
-        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,6,"fre",246,"50kg","aici sunt alergeni","Aici trebuie sa fie descriere"));
-        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,7,"fre",246,"50kg","aici sunt alergeni","Aici trebuie sa fie descriere"));
-        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,8,"fre",246,"50kg","aici sunt alergeni","Aici trebuie sa fie descriere"));
-        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,9,"fre",246,"50kg","aici sunt alergeni","Aici trebuie sa fie descriere"));
-        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,10,"fre",246,"50kg","aici sunt alergeni","Aici trebuie sa fie descriere"));
-        roomServiceModelUIArrayList.add(new ListHeaderModelUI(ListItemGenericType.HEADER,"Cina"));
-        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,11,"fre",246,"50kg","aici sunt alergeni","Aici trebuie sa fie descriere"));
-        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,12,"fre",246,"50kg","aici sunt alergeni","Aici trebuie sa fie descriere"));
-        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,13,"fre",246,"50kg","aici sunt alergeni","Aici trebuie sa fie descriere"));
-        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,14,"fre",246,"50kg","aici sunt alergeni","Aici trebuie sa fie descriere"));
-        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,15,"fre",246,"50kg","aici sunt alergeni","Aici trebuie sa fie descriere"));
+        roomServiceModelUIArrayList.add(new ListHeaderModelUI(ListItemGenericType.HEADER,"Appetizer"));
+        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,1,"Bruschetta with tomatoes",25,"87,5 oz.","bread, tomatoes, gorgonzola, mozzarella, salt, pepper, basil"));
+        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,2,"Jamon",30,"100 oz.","jamon, pepper, salt, figs"));
+        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,3,"Cheese platter",35,"200 oz.","mozzarella, gouda cheese, moldy cheese, edam cheese, grapes, nuts, olives"));
+        roomServiceModelUIArrayList.add(new ListHeaderModelUI(ListItemGenericType.HEADER,"Main dish"));
+        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,4,"Paella",35,"150 oz.","onion, garlic, olive oil, tomatoes, shrimp, mushrooms, squid, lemon"));
+        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,5,"Seafood",50,"300 oz.","Crab legs, smoked salmon, lobster, mussels, oysters"));
+        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,6,"Fish stew",20,"150 oz.","onion, garlic, olive oil, tomatoes, mussels, butter"));
+        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,7,"Pizza Margherita",15,"100 oz.","sauce, fresh mozzarella, basil, salt, pepper"));
+        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,8,"Pizza Marinara",10,"100 oz.","tomato sauce, garlic, oregano, salt, pepper"));
+        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,9,"Pizza Frutti di Mare",20,"120 oz.","shrimp, mussels, calamari, oregano, basil, salt, pepper"));
+        roomServiceModelUIArrayList.add(new ListHeaderModelUI(ListItemGenericType.HEADER,"Dessert"));
+        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,10,"Tiramisu",8,"50kg","italian ladyfingers, egg yolks, mascarpone, sugar, espresso"));
+        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,11,"Strawberry cheesecake",8,"30 oz.","graham crackers, butter, brown sugar, vanilla extract"));
+        roomServiceModelUIArrayList.add(new ListHeaderModelUI(ListItemGenericType.HEADER,"Drinks"));
+        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,12,"Coca-Cola",3,"1 bottle, 16,91 fl. oz.",""));
+        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,13,"Mineral Water",2,"1 bottle, 16,91 fl. oz.",""));
+        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,14,"Still Water",2,"1 bottle, 16,91 fl. oz.",""));
+        roomServiceModelUIArrayList.add(new RoomServiceModelUI(ListItemGenericType.ITEM,15,"Wine",15,"1 bottle, 33,81 fl. oz.",""));
+
         var roomServiceAdapter = new RoomServiceAdapter(roomServiceModelUIArrayList, new RoomServiceAdapter.RoomServiceClickListener() {
             @Override
             public void onMenuClick(ListItemBaseModelUI item) {

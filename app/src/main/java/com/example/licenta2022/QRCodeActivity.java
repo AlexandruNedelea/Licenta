@@ -104,8 +104,9 @@ public class QRCodeActivity extends BaseActivity<ActivityQrcodeBinding> implemen
     private void setQrImage() {
         var imageSize = Resources.getSystem().getDisplayMetrics().widthPixels - (int)(2 *
                 getResources().getDimension(R.dimen.default_margin));
-        dataBinding.ivQrCode.setImageBitmap(generateQrCode("123", imageSize));
+        dataBinding.ivQrCode.setImageBitmap(generateQrCode("2", imageSize));
     }
+
 
     private Bitmap generateQrCode(String Value, int size) {
         BitMatrix bitMatrix;

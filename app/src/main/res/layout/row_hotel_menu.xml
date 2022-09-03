@@ -30,8 +30,7 @@
                     android:id="@+id/rv_row_hotel"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    app:loadCountryFlagIntoView="@{model.id}"
-                    android:src="@drawable/scubadiving"/>
+                    app:loadCountryFlagIntoView="@{model.id}" />
                 <TextView
                     android:id="@+id/tv_HotelName"
                     android:layout_marginTop="12dp"

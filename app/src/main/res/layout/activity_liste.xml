@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     tools:context=".ListeActivity"
+     android:orientation="vertical"
+     android:layout_marginTop="40sp">
+
+  <EditText
+      android:id="@+id/et_Name"
+      android:layout_marginStart="20sp"
+      android:layout_width="200sp"
+      android:layout_height="40sp"
+      android:layout_marginTop="20sp"
+      android:text="Name:" />
+
+  <EditText
+      android:id="@+id/et_FirstName"
+      android:layout_marginStart="20sp"
+      android:layout_width="200sp"
+      android:layout_height="40sp"
+      android:layout_marginTop="20sp"
+      android:text="FirstName:" />
+
+  <EditText
+      android:id="@+id/et_Age"
+      android:layout_marginStart="20sp"
+      android:layout_width="200sp"
+      android:layout_height="40sp"
+      android:layout_marginTop="20sp"
+      android:text="Age" />
+
+  <com.google.android.material.button.MaterialButton
+      android:id="@+id/btnInsert"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="60dp"
+      android:layout_marginTop="30dp"
+      android:text="Button"/>
+
+  <androidx.core.widget.NestedScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:visibility="invisible"
+        android:id="@+id/rv_user_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:overScrollMode="never"/>
+
+
+   </LinearLayout>
+  </androidx.core.widget.NestedScrollView>
+ </LinearLayout>
+</layout>

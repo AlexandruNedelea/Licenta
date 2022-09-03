@@ -24,10 +24,10 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_room_service"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="150dp"
+                android:layout_height="130dp"
                 android:layout_gravity="center"
-                android:src="@drawable/scubadiving" />
+                app:roomserviceMenuImageBinding="@{model.id}" />
 
             <RelativeLayout
                 android:id="@+id/rl_room_service_details_container"
@@ -77,6 +77,17 @@
                     android:textSize="8sp" />
 
                 <TextView
+                    android:id="@+id/tv_text_price_euro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_room_service_food_name"
+                    android:layout_toEndOf="@+id/tv_value_price"
+                    android:layout_marginTop="12dp"
+                    android:text=" euros"
+                    android:textColor="#6f6f6f"
+                    android:textSize="8sp" />
+
+                <TextView
                     android:id="@+id/tv_text_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -97,32 +108,12 @@
                     android:textColor="#6f6f6f"
                     android:textSize="8sp" />
 
-                <TextView
-                    android:id="@+id/tv_text_allergens"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_value_amount"
-                    android:layout_marginTop="12dp"
-                    android:text="Allergens: "
-                    android:textColor="#6f6f6f"
-                    android:textSize="8sp" />
-
-                <TextView
-                    android:id="@+id/tv_value_allergens"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/tv_text_allergens"
-                    android:layout_below="@+id/tv_value_amount"
-                    android:layout_marginTop="12dp"
-                    android:text="@{model.allergens}"
-                    android:textColor="#6f6f6f"
-                    android:textSize="8sp" />
 
                 <TextView
                     android:id="@+id/tv_text_description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_text_allergens"
+                    android:layout_below="@+id/tv_text_amount"
                     android:layout_marginTop="12dp"
                     android:text="Description: "
                     android:textColor="#6f6f6f"
@@ -133,7 +124,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@+id/tv_text_description"
-                    android:layout_below="@+id/tv_text_allergens"
+                    android:layout_below="@+id/tv_text_amount"
                     android:layout_marginTop="12dp"
                     android:text="@{model.description}"
                     android:textColor="#6f6f6f"

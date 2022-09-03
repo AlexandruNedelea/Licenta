@@ -12,16 +12,19 @@ public class DealsTripsUI {
     private String duration;
     private String description;
 
-    public DealsTripsUI(int id, String imageUrl, String price, String nameActivity, String age, String placeToGo, String duration, String description) {
+    public DealsTripsUI(int id, String imageUrl, String price, String nameActivity, String age, String location, String duration, String description) {
         this.id = id;
         this.imageUrl = imageUrl;
         this.price = price;
         this.nameActivity = nameActivity;
         this.age = age;
-        this.location = placeToGo;
+        this.location = location;
         this.duration = duration;
         this.description = description;
+
     }
+
+
 
     public DealsTripsUI() {
     }
@@ -100,4 +103,6 @@ public class DealsTripsUI {
     public void setDescription(String description) {
         this.description = description;
     }
+
+
 }

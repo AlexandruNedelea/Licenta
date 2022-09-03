@@ -13,7 +13,7 @@
         app:cardElevation="6dp"
         app:cardCornerRadius="12dp"
         android:layout_margin="12dp"
-        app:cardBackgroundColor="@{model.selected ? @color/background_color : @color/background_color_selected}">
+        app:cardBackgroundColor="@{model.selected ? @color/primary_button_color : @color/background_color_selected}">
 
         <LinearLayout
             android:orientation="vertical"
@@ -25,11 +25,9 @@
                 android:id="@+id/tv_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#6f6f6f"
+                android:textColor="@{model.selected ? @color/text_color_selected : @color/text_color}"
                 android:textSize="18sp"
-                android:text="@{model.name}"
-                android:outlineAmbientShadowColor="@color/text_color"
-                android:textColorHighlight="@{model.selected ? @color/text_color : @color/text_color_selected}"/>
+                android:text="@{model.name}" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

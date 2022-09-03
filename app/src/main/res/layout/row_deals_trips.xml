@@ -29,9 +29,9 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/rv_row_deals_trips"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/trip"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/wine"
                     app:dealsTripsImageBinding="@{model.imageUrl}" />
 
                 <TextView

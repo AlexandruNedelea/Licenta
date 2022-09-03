@@ -7,7 +7,7 @@ public class RoomServiceModel {
     private String foodname;
     private int price;
     private String amount;
-    private String allergens;
+   // private String allergens;
     private String description;
     private int quantity;
 
@@ -19,7 +19,7 @@ public class RoomServiceModel {
         this.foodname = uiModel.getFoodname();
         this.price = uiModel.getPrice();
         this.amount = uiModel.getAmount();
-        this.allergens = uiModel.getAllergens();
+        //this.allergens = uiModel.getAllergens();
         this.description = uiModel.getDescription();
         this.quantity = uiModel.getQuantity();
     }
@@ -56,13 +56,9 @@ public class RoomServiceModel {
         this.amount = amount;
     }
 
-    public String getAllergens() {
-        return allergens;
-    }
+    //public String getAllergens() {return allergens;}
 
-    public void setAllergens(String allergens) {
-        this.allergens = allergens;
-    }
+    //public void setAllergens(String allergens) {this.allergens = allergens;}
 
     public String getDescription() {
         return description;

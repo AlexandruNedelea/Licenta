@@ -11,37 +11,14 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:visibility="gone">
 
             <ImageView
                 android:id="@+id/iv_qr_code"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-            <!--<com.journeyapps.barcodescanner.DecoratedBarcodeView
-                android:id="@+id/zxing_barcode_scanner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:zxing_scanner_layout="@layout/custom_qrcode_scanner_view"
-                app:zxing_use_texture_view="true" />
+                android:layout_height="wrap_content" />
 
-            <com.aigia.health.customViews.ScanQRCodeOverlayView
-                android:id="@+id/v_with_rounded_border"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@color/transparent" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_top_message"
-                style="@style/RegularTextMediumLargeBold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|top"
-                android:layout_marginHorizontal="40dp"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:textColor="@color/white" />-->
         </FrameLayout>
 
         <FrameLayout

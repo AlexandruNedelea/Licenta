@@ -25,9 +25,9 @@ public class EmployeeActivity extends BaseActivity<ActivityEmployeeBinding> {
 
     private void setRecyclerView() {
         ArrayList<HotelMenuModelUI> hotelMenuModelUIArrayList = new ArrayList<>();
-        hotelMenuModelUIArrayList.add(new HotelMenuModelUI(HotelItemType.ROOM, "Room"));
-        hotelMenuModelUIArrayList.add(new HotelMenuModelUI(HotelItemType.ROOM_SERVICE, "Room Service"));
-        hotelMenuModelUIArrayList.add(new HotelMenuModelUI(HotelItemType.MENAGERIE, "Maid"));
+        hotelMenuModelUIArrayList.add(new HotelMenuModelUI(1, "Room"));
+        hotelMenuModelUIArrayList.add(new HotelMenuModelUI(2, "Room Service"));
+        hotelMenuModelUIArrayList.add(new HotelMenuModelUI(3, "Maid"));
 
         HotelMenuAdapter hotelMenuAdapter= new HotelMenuAdapter(hotelMenuModelUIArrayList, new HotelMenuAdapter.HotelMenuClickListener() {
             @Override
@@ -45,11 +45,6 @@ public class EmployeeActivity extends BaseActivity<ActivityEmployeeBinding> {
             case HotelItemType.ROOM:
                 onEmployeeMenuRoomClick();
                 break;
-//            case HotelItemType.BALCONY:
-//                onMenuBalconyClick();
-//                break;
-//            case HotelItemType.BATH:
-//                break;
             case HotelItemType.ROOM_SERVICE:
                 onEmployeeMenuRoomServiceClick();
                 break;

@@ -30,7 +30,7 @@ public class DealsTripsActivity extends BaseActivity<ActivityDealsTripsBinding> 
     }
 
     private void sendTripToServer() {
-        var uiModel = new DealsTripsUI(10,"", "Price: Una Lira","Name:BOAT1","Age:70+","Where:Ghedu","Duration:3 hours","Description:Descrierea urmeaza sa o pun dar mai intai vreau sa ma asigur ca functioneaza cum trebuie");
+        var uiModel = new DealsTripsUI(100,"", "Price: Una Lira","Name:BOAT1","Age:70+","Where:Ghedu","Duration:3 hours","Description:Descrierea urmeaza sa o pun dar mai intai vreau sa ma asigur ca functioneaza cum trebuie");
         var modelToSendToServer = new TripsModel(uiModel);
         FirebaseHelper.getInstance().getTripsDatabaseReference()
                 .child(TripsActivityItemType.SURF)

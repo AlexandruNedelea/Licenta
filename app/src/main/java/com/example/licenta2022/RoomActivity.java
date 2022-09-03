@@ -37,15 +37,15 @@ public class RoomActivity extends BaseActivity<ActivityRoomBinding> {
     }
 
     private void setRecyclerView() {
-        roomProblemsListUI.add(new RoomModelUI(1,"Pat"));
-        roomProblemsListUI.add(new RoomModelUI(2,"Saltea"));
-        roomProblemsListUI.add(new RoomModelUI(3,"Televizor"));
-        roomProblemsListUI.add(new RoomModelUI(4,"Aer conditionat"));
-        roomProblemsListUI.add(new RoomModelUI(5,"Masa"));
-        roomProblemsListUI.add(new RoomModelUI(6,"Lenjerie pat"));
-        roomProblemsListUI.add(new RoomModelUI(7,"Cada/Cabina dus"));
-        roomProblemsListUI.add(new RoomModelUI(8,"Usi defecte"));
-        roomProblemsListUI.add(new RoomModelUI(9,"Minibar"));
+        roomProblemsListUI.add(new RoomModelUI(1,"Mattress problems"));
+        roomProblemsListUI.add(new RoomModelUI(2,"TV is not working"));
+        roomProblemsListUI.add(new RoomModelUI(3,"Air conditioning is damaged"));
+        roomProblemsListUI.add(new RoomModelUI(4,"Broken table"));
+        roomProblemsListUI.add(new RoomModelUI(5,"Lights are not working"));
+        roomProblemsListUI.add(new RoomModelUI(6,"Shower cabin or bathub is damaged"));
+        roomProblemsListUI.add(new RoomModelUI(7,"Defective door"));
+        roomProblemsListUI.add(new RoomModelUI(8,"Lack of minibar items"));
+        roomProblemsListUI.add(new RoomModelUI(9,"Missing keys"));
         var roomAdapter = new RoomAdapter(roomProblemsListUI, new RoomAdapter.RoomMenuClickListener() {
             @Override
             public void onMenuClick(RoomModelUI item) {
@@ -104,7 +104,7 @@ public class RoomActivity extends BaseActivity<ActivityRoomBinding> {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(RoomActivity.this, "Adaugare nu prea cu succes", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RoomActivity.this, "Adaugare eșuată", Toast.LENGTH_SHORT).show();
             }
         });
     }

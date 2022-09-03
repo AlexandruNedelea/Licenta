@@ -1,6 +1,7 @@
 package com.example.licenta2022.models;
 
 public class TripsModelUI {
+
     private String type;
     private String name;
 
@@ -12,13 +13,9 @@ public class TripsModelUI {
     public TripsModelUI() {
     }
 
-    public String getType() {
-        return type;
-    }
+    public String getType() { return type; }
 
-    public void setType(String type) {
-        this.type = type;
-    }
+    public void setType(String type) { this.type = type; }
 
     public String getName() { return name; }
 

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent" >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_margin"
+            app:cardCornerRadius="32dp"
+            android:background="@drawable/card_white_background_shadow"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:orientation="vertical">
+
+                <com.example.licenta2022.customViews.AigiaDateTimeInputView
+                    android:id="@+id/dtv_add_lab_results_date_time_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginHorizontal="@dimen/default_margin"
+                    app:dateTimeInputPrimaryTitle="Date"
+                    app:dateTimeInputSecondaryTitle="Time" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_dialog_choose_housekeeping_select"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:textAllCaps="false"
+                    app:cornerRadius="20dp"
+                    android:backgroundTint="@color/primary_button_color"
+                    android:text="Select housekeeping for the selected date and time"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</layout>
